@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Content page</title>
+        ${require('../modules/01 Global/html/head.html')}
+    </head>
+    <body class="no-js">
+        <div class="page-wrapper" id="page-wrapper">
+
+            ${require('../modules/utility-navigation/html/index.html')}
+            ${require('../modules/header/html/content.html')}
+
+            <div role="main">
+                <div id="content" class="container">
+                    
+                    ${require('../modules/breadcrumbs/html/content.html')}
+
+                    <div class="row wrapper">
+                        <div class="primary col-sm-9 col-xs-12">
+                            <article class="module">
+                                <div class="module-content">
+                                    <h1>Lorem ipsum dolor sit amet</h1>
+
+                                    ${require('../modules/date-row/html/index.html')}
+
+                                    ${require('../modules/content-img/html/index.html')}
+                                    
+                                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                    <br>
+                                    <p><a href="#" target="_blank" class="button">Visit website</a></p>
+
+                                    ${require('../modules/accordion/html/index.html')}
+
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="secondary col-sm-3">
+                            ${require('../modules/social-aside/html/index.html')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--noindex-->
+            ${require('../modules/footer/html/index.html')}
+            <!--endnoindex-->   
+        </div>
+
+        ${require('../modules/01 Global/html/scripts.html')}
+
+    </body>
+</html>

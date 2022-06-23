@@ -1,0 +1,37 @@
+/*
+ * QLD Government Imports
+*/
+
+/*
+ * Mobile layout
+ */
+
+body {
+    background-color: #0C2E4C;
+    z-index: 1;
+}
+
+#content {
+     background-color: #fff;
+}
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+    body {
+        z-index: 2;
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    body {
+        z-index: 3;
+    }
+} 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home page</title>
+        ${require('../modules/01 Global/html/head.html')}
+    </head>
+    <body class="no-js home">
+        <div class="page-wrapper">
+            <!--noindex-->
+            ${require('../modules/utility-navigation/html/index.html')}
+            ${require('../modules/header/html/index.html')}
+            <!--endnoindex-->
+
+            <div id="content">
+                ${require('../modules/hero-banner/html/index.html')}
+                <div class="container">
+                    <div class="row wrapper">
+                        <article class="module">
+                            <div class="module-content">
+                                ${require('../modules/tiles/html/index.html')}
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!--noindex-->
+            ${require('../modules/footer/html/index.html')}
+            <!--endnoindex-->
+        </div>
+
+        ${require('../modules/01 Global/html/scripts.html')}
+
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<div id="contact-landing-page-form" class="form">
+
+    <form action="#" method="POST">
+
+        <div class="form__field">
+           
+                <legend>How can we help you?</legend>
+                <div class="form__field-wrapper">
+                    
+                    <fieldset>
+                    
+                        <div class="form__field-item">
+                            <input type="radio" name="input-radio" value="1" id="form-radio-1" data-action="redirect" data-redirect-url="" required>
+                            <label for="form-radio-1">I want to request Open Data</label>
+                        </div>
+                        
+                        <div class="form__field-item">
+                            <input type="radio" name="input-radio" value="2" id="form-radio-2" data-action="redirect" data-redirect-url="">
+                            <label for="form-radio-2">I have a question about Open Data or this data portal</label>
+                        </div>
+                        
+                        <div class="form__field-item">
+                            <input type="radio" name="input-radio" value="3" id="form-radio-3" data-action="alert" data-alert-target="#form-radio-3-alert">
+                            <label for="form-radio-3">I have a question that is not about Open Data or this data portal</label>
+                        </div>    
+
+                    </fieldset>          
+
+                </div>
+          
+        </div>
+        
+        ${require('../../../modules/alert/html/index.html')}
+
+        <button type="submit">Continue</button>
+    
+    </form>
+
+</div>

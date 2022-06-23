@@ -1,0 +1,70 @@
+/*
+ * Mobile layout
+ */
+
+.social-aside {
+    padding: 0 0 pxToRem(30) 0;
+    float: left;
+    width: 100%;
+
+    .module-heading {
+        border :0;
+        font-size: pxToRem(16);
+        color: $black;
+        padding: pxToRem(15) pxToRem(15);
+        line-height: 1;
+
+        .fa {
+            font-size: pxToRem(21);
+            margin-right: pxToRem(7);
+        }
+
+    }
+
+    ul {
+        @include sq-list-reset;
+
+        li {
+            @include sq-list-reset;
+            width: 100%;
+            line-height: 1;
+
+            a {
+                display: block;
+                font-size: pxToRem(16);
+                font-weight: 500;
+                color: $black;
+                text-decoration: none;
+                padding: pxToRem(15) pxToRem(15);
+                @include sq-transition(background-color 0.4s ease);
+                width: 100%;
+
+                &:hover,
+                &:focus {
+                    background-color: $light-grey-blue;
+                    font-weight: 700;
+                }
+            }
+
+            .fa {
+                font-size: pxToRem(21);
+                margin-right: pxToRem(7);
+            }
+
+        }
+
+    }
+
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+    .social-aside {
+        margin: 0;
+        padding: pxToRem(30) 0;
+    }
+}

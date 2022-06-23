@@ -1,0 +1,55 @@
+/*
+ * QLD Government Imports
+*/
+
+
+
+
+/*
+ * Mobile layout
+ */
+
+body {
+    position: relative;
+    z-index: 1;
+}
+
+.show-desktop {
+    display: none;
+}
+
+a:focus,
+button:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+    body {
+        z-index: 2;
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    body {
+        z-index: 3;
+    }
+
+    .show-mobile {
+        display: none;
+    }
+
+    .show-desktop {
+        display: block;
+    }
+} 

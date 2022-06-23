@@ -1,0 +1,37 @@
+/*
+ * Mobile layout
+ */
+
+.content-img {
+
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 pxToRem(20) 0;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+    .content-img {
+
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    .content-img {
+        
+    }
+}

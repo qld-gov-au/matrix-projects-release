@@ -1,0 +1,45 @@
+/*
+ * Mobile layout
+ */
+
+ #qg-access {
+    z-index: 9;
+    width: 100%;
+    position: relative;
+    background: #444;
+}
+#qg-access ul {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#qg-access li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+#qg-access h1, #qg-access h2 {
+    font-size: 1em;
+}
+#qg-access a, #qg-access h1, #qg-access h2 {
+    position: absolute;
+    top: 0;
+    left: -99999px;
+    width: 100%;
+    display: block;
+    margin: 1px 0;
+    padding: 0.5em 1em;
+    background: #444;
+    color: #fff;
+}
+#qg-access a:focus, #qg-access a:hover, #qg-access h1:focus, #qg-access h1:hover {
+    position: relative;
+    left: 0;
+    background: #000;
+}
+#qg-access:active {
+    background: pink;
+}

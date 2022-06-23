@@ -1,0 +1,23 @@
+/*
+ * Mobile layout
+ */
+
+ #qg-breadcrumb .qg-breadcrumb__ellipses {
+    display: none;
+}
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    
+    #qg-breadcrumb .qg-breadcrumb__ellipses {
+        display: inline-block;
+    }
+
+    #qg-breadcrumb .qg-breadcrumb__ellipses ~ li:not(:last-child) {
+        display: none;
+    }
+
+}

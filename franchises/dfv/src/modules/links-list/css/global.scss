@@ -1,0 +1,104 @@
+/*
+ * Global
+ */
+
+/*
+ * Mobile layout
+ */
+
+ #qg-primary-content {
+    
+    .qg-links-list {
+        background-color: #ddecf1;
+        margin-left: -$medium-spacing;
+        margin-right: -$medium-spacing;
+        padding: pxToRem(30);
+    }
+
+    .qg-links-list__heading {
+        font-weight: 400;
+        margin: 0 0 20px 0;
+    }
+
+    .qg-links-list__list {
+        @include sq-list-reset();
+    }
+
+    .qg-links-list__item + .qg-links-list__item { 
+        margin-top: pxToRem(20);
+    }
+    
+    .qg-links-list__link {
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    a.qg-links-list__link:link,
+    a.qg-links-list__link:visited {
+        
+        text-decoration: none;
+    }
+
+    a.qg-links-list__link:hover {
+        text-decoration: underline;
+    }
+
+    .qg-links-list__list-bullet {
+
+    
+        @include css-chevron($medium-spacing, 8px, $deep-blue);
+
+    }
+    
+}
+
+ /*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    
+    #qg-primary-content {
+
+        .qg-links-list {
+            font-size: 18px;
+        }
+
+    }
+
+}
+
+
+/*
+ * DFV Specific
+ */
+
+ #qg-primary-content {
+    
+    .qg-links-list {
+        background-color: $dark-blue;
+        margin-top: 50px;
+    }
+
+    .qg-links-list__heading {
+        color: #fff;
+    }
+        
+    a.qg-links-list__link:link,
+    a.qg-links-list__link:visited {
+        color: #fff;
+    }
+
+    .qg-links-list__list-bullet {
+
+        @include css-arrow(14px, 11px, #fff);
+        
+        margin-right: pxToRem(14);
+
+        &:after {
+            left: auto;
+        }
+
+    }
+    
+}

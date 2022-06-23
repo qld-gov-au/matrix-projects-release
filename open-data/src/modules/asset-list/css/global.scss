@@ -1,0 +1,56 @@
+/*
+ * Mobile layout
+ */
+
+.asset-list {
+
+    padding: 0 0 pxToRem(30) 0;
+
+    &__title {
+        color: $black;
+        font-size: pxToRem(18);
+        line-height: pxToRem(22);
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+    }
+
+    ul {
+        padding: 0;
+        @include sq-list-reset;
+        margin: pxToRem(15) 0 0 0;
+        padding: pxToRem(10) 0 pxToRem(20) pxToRem(30);
+
+        li {
+            @include sq-list-reset;
+            position: relative;
+            padding: 0 0 pxToRem(15) 0;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: pxToRem(5);
+                height: pxToRem(5);
+                background-color: $light-blue;
+                @include sq-border-radius(999px);
+                left: pxToRem(-15);
+                top: pxToRem(10);
+            }
+
+            a {
+                color: $light-blue;
+                text-decoration: underline;
+
+                &:hover,
+                &:focus {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+}

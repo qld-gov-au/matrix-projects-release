@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Landing page</title>
+        ${require('../modules/01 Global/html/head.html')}
+    </head>
+    <body class="no-js">
+        <div class="page-wrapper" id="page-wrapper">
+            
+            ${require('../modules/utility-navigation/html/index.html')}
+            ${require('../modules/header/html/content.html')}
+    
+            <div role="main">
+                <div id="content" class="container">
+                    ${require('../modules/breadcrumbs/html/landing.html')}
+
+                    <div class="row wrapper">
+                        <div class="primary col-sm-9 col-xs-12">
+                            <article class="module">
+                                <div class="module-content">
+                                    <h1>News and Events</h1>
+                                    <h2>Featured</h2>
+        
+                                    ${require('../modules/list-block/html/index.html')}
+        
+                                    ${require('../modules/asset-list/html/index.html')}
+                                </div>
+                            </article>
+                        </div>
+                        <div class="secondary col-sm-3">
+                            ${require('../modules/sub-nav/html/index.html')}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <!--noindex-->
+            ${require('../modules/footer/html/index.html')}
+            <!--endnoindex-->   
+
+        </div>
+
+        ${require('../modules/01 Global/html/scripts.html')}
+
+    </body>
+</html>

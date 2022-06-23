@@ -1,0 +1,73 @@
+/*
+ * Mobile layout
+ */
+
+ html {
+    /* Override Bootstrap's default font-size */
+    font-size: $base-font-pixel + px;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    line-height: normal;
+    z-index: 1;
+}
+
+.container--outer {
+    margin: 0 auto;
+    max-width: pxToRem(1390);
+    padding: 0 pxToRem(30);
+}
+
+.container--inner {
+    max-width: pxToRem(1220);
+}
+
+/* 
+ * Animations
+ */
+.shake {
+    animation: shake 0.7s linear;
+}
+
+@keyframes shake {
+    0% { -webkit-transform: translate(30px); }
+    20% { -webkit-transform: translate(-30px); }
+    40% { -webkit-transform: translate(15px); }
+    60% { -webkit-transform: translate(-15px); }
+    80% { -webkit-transform: translate(8px); }
+    100% { -webkit-transform: translate(0px); }
+}
+
+/*
+ * Tablet layout
+ */
+@media screen and (min-width: $tablet){
+    body {
+        z-index: 2;
+    }
+}
+
+@media screen and (max-width: $desktop - 1px) {
+
+    body {
+
+        &.mobile-nav-active {
+            overflow-y: hidden;
+        }
+
+    }
+
+}
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    
+    body {
+        z-index: 3;
+    }
+
+} 

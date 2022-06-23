@@ -1,0 +1,340 @@
+/*----------------------
+ * Header Main Navigation
+ *----------------------
+ */
+
+/*
+ * Mobile layout
+ */
+
+ /* Menu list */
+.qg-main-nav__menu-list {
+    font-size: pxToRem(20);
+    margin-bottom: 0;
+
+    /* Parent menu wrapper */
+    &--parent {
+        margin-left: pxToRem(16);
+    }
+
+    /* Sub menu menu wrapper */
+    &--sub {
+        margin-bottom: pxToRem(20);
+        margin-left: pxToRem(0);
+    }
+
+}
+
+/* Menu item */
+.qg-main-nav__menu-item {
+
+    .qg-main-nav__menu-list--sub > & + & {
+        margin-top: pxToRem(20);
+    }
+
+}
+
+/* Menu bullet */
+.qg-main-nav__menu-bullet {
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 0;
+    font-size: pxToRem(13);
+
+    /* Parent menu bullet */
+    .qg-main-nav__menu-list--parent > .qg-main-nav__menu-item > & {    
+        margin-top: pxToRem(4);
+    }
+
+}
+
+/* Menu link */
+.qg-main-nav__menu-link {
+
+    color: #fff;
+
+    &:hover,
+    &:focus {
+        color: #fff;
+    }
+
+    /* Dropdown links */
+    .qg-main-nav__dropdown & {
+        
+        &:hover,
+        &:focus {
+            color: #fff;
+        }
+
+    }
+
+}
+
+/* Dropdown toggle */
+.qg-main-nav__dropdown-toggle {
+    display: none;
+}
+
+/* Dropdown - Contains sub menu list and footer link */
+.qg-main-nav__dropdown {
+    @extend %screen-hide;
+    margin-top: pxToRem(15);
+    margin-left: pxToRem(10);
+
+    .qg-main-nav__dropdown-link--focused > & {
+        clip: auto;
+        height: auto;
+        overflow: visible;
+        width: auto;
+    }
+
+}
+
+/* Up to before desktop layout */
+@media screen and (max-width: $desktop - 1px) {
+
+    .qg-main-nav {
+
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+
+        .mobile-nav-active & {
+            clip: auto;
+            height: auto;
+            margin: 0;
+            overflow: visible;
+            position: static;
+            width: auto;
+        }
+
+    }
+
+    /* Menu item */
+    .qg-main-nav__menu-item {
+ 
+        .qg-main-nav__menu-list--parent > & {
+            padding-left: pxToRem(10);
+        }
+
+        .qg-main-nav__menu-list--parent > & + & {
+            margin-top: pxToRem(20);
+        }
+
+    }
+
+    /* Menu bullet */
+    .qg-main-nav__menu-bullet {
+        
+        /* Parent menu bullet when dropdown is toggled or dropdown menu link is focused (JS) */
+        .qg-main-nav__dropdown-toggle:checked ~ &,
+        .qg-main-nav__dropdown-link--focused > & {
+            transform: rotate(90deg);
+        }
+
+        /* Sub menu bullets */
+        .qg-main-nav__menu-list--sub & {
+            display: none;
+        }
+
+    }
+
+    /* Menu link */
+    .qg-main-nav__menu-link {
+
+        /* Parent link */
+        .qg-main-nav__menu-list--parent > .qg-main-nav__menu-item > & {
+            font-weight: 700;
+        }
+
+        /* Dropdown menu links */
+        .qg-main-nav__dropdown & {
+            text-decoration: underline;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+
+    }
+
+    /* Dropdown */
+    .qg-main-nav__dropdown {
+        
+        // When dropdown menu link is focused (JS)
+        .qg-main-nav__dropdown-link--focused > & {
+            position: static;
+        }
+
+        // Show dropdown when checkbox toggle is checked
+        .qg-main-nav__dropdown-toggle:checked ~ & {
+            clip: auto;
+            height: auto;
+            overflow: visible;
+            position: static;
+            width: auto;
+        }
+
+    }
+
+}
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop) {
+    
+    .qg-main-nav {
+        background-color: #f5f5f5;
+    }
+
+    /* Menu list */
+    .qg-main-nav__menu-list {  
+        font-size: pxToRem(18);
+        
+        /* Parent menu list */
+        &--parent {
+            display: flex;
+            justify-content: flex-end;
+            margin-left: pxToRem(0);
+        }
+
+        &--sub {
+            margin-left: pxToRem(17);
+            margin-bottom: pxToRem(35);
+        }
+
+    }
+
+    /* Menu item */
+    .qg-main-nav__menu-item {
+
+        .qg-main-nav__menu-list--parent > & {
+            position: relative;
+        }
+
+        .qg-main-nav__menu-list--sub & {
+            padding-left: pxToRem(10);
+        }
+        
+    }
+
+    /* Menu bullet */
+    .qg-main-nav__menu-bullet {
+        
+        /* Parent menu bullet */
+        .qg-main-nav__menu-list--parent > .qg-main-nav__menu-item > & {
+            display: none;
+        }
+
+        /* Sub menu bullets */
+        .qg-main-nav__menu-list--sub & {
+            display: block;
+            margin-top: pxToRem(3);
+        }
+
+    }
+
+    /* Menu link */
+    .qg-main-nav__menu-link {
+
+        /* Parent link */
+        .qg-main-nav__menu-list--parent > .qg-main-nav__menu-item > & {
+            color: #000;
+            display: block;
+            font-weight: 400;
+            line-height: 1;
+            padding: pxToRem(25) pxToRem(30) pxToRem(30);
+
+            &:hover,
+            &:focus {
+                background-color: #333;
+                color: #fff;
+            }
+        }
+
+        /* When dropdown menu link is focused (JS) */
+        .qg-main-nav__menu-list--parent > .qg-main-nav__dropdown-link--focused > & {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Hovering over parent li of parent link */
+        .qg-main-nav__menu-list--parent > .qg-main-nav__menu-item:hover > & {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Footer link in dropdown */
+        .qg-main-nav__dropdown > & {
+            float: right;
+            text-decoration: underline;
+    
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+    
+        }
+
+    }
+
+    /* Dropdown */
+    .qg-main-nav__dropdown {
+        background-color: #333;
+        left: 0;
+        margin: 0;
+        padding: pxToRem(30) pxToRem(30) pxToRem(20);
+        position: absolute;
+        z-index: 5;
+
+        .qg-main-nav__menu-item:hover &,
+        .qg-main-nav__menu-link:focus + &,
+        .qg-main-nav__dropdown-link--focused > & {   
+            width: pxToRem(400);
+        }
+        
+        .qg-main-nav__menu-link:focus + &,
+        .qg-main-nav__menu-item:hover & {
+            clip: auto;
+            height: auto;
+            overflow: visible;
+        }
+        
+        /* At this breakpoint, the viewport is too small for the second last child and last child dropdown width */
+        /* Make them start from the right instead */
+        .qg-main-nav__menu-item:last-child &,
+        .qg-main-nav__menu-item:nth-last-child(2) & {
+            left: auto;
+            right: 0;
+        }
+
+    }
+
+}
+
+/*
+ * Extra large desktop layout
+ */
+
+ @media screen and (min-width: 1500px) {
+
+    /* Dropdown */
+    .qg-main-nav__dropdown {
+
+        /* Screen should be large enough to allow menu to start from left */
+        .qg-main-nav__menu-item:nth-last-child(2) & {
+            left: 0;
+            right: auto;
+        }
+
+    }
+
+ }

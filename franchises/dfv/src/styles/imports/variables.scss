@@ -1,0 +1,37 @@
+// Base font
+$base-font-scale: 1;  // The font scale multiplier (e.g. 2 = 32px/2em/2rem)
+$base-font-pixel: 16; // Used for font size calculations & conversions
+$base-font-colour: #4a4a4a;
+
+// Selection highlighting
+$content-selection-highlight: #b3d4fc;
+
+// Default breakpoints
+$tablet: 768px;
+$desktop: 992px;
+
+// Spacing
+$small-spacing: 16px;
+$medium-spacing: 25px;
+$large-spacing: 32px;
+
+// Colours
+$dark-blue: #0c2e4c;
+$light-blue: #007eb1;
+$deep-blue: #13578b;
+$ice-blue: #ddecf1;
+$qg-blue: #00618e;
+
+$light-purple: #f4ebf5;
+$purple: #7753a2;
+
+$light-green: #77ba00;
+
+$dark-grey: #505050;
+$darkish-grey: #818181;
+$hard-grey: #7e7e7e;
+$grey: #eee;
+$light-grey: #8a8a8a;
+$lightish-grey: #cecece;
+
+$deep-yellow: #ffd200;
