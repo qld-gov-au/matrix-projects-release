@@ -1,0 +1,47 @@
+/*
+ * Mobile layout
+ */
+
+.alert {
+    border: none;
+    border-left: 5px solid $light-dark-blue;
+    background-color: $white-two;
+    font-weight: 400;
+    color: $black;
+    margin: 0;
+    border-radius: 0;
+    padding: pxToRem(12) pxToRem(20);
+
+    a {
+        color: $light-blue;
+        text-decoration: underline;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+    .alert {
+
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    .alert {
+        
+    }
+}

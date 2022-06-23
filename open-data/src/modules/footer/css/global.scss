@@ -1,0 +1,137 @@
+/*
+ * Mobile layout
+ */
+
+.site-footer {
+    margin: 0;
+    width: 100%;
+    background-color: $dark-blue;
+    padding: pxToRem(25) 0 pxToRem(35) 0;
+    background-image: none !important;
+
+    .container {
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+
+    ul {
+        @include sq-list-reset;
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+
+        li {
+            @include sq-list-reset;
+            margin: 0 0 pxToRem(8) 0;
+            width: auto;
+
+            &.mobile-hidden {
+                display: none;
+            }
+
+            &:last-child {
+                margin-right: 0;
+
+                a {
+                    border-right: none;
+                }
+            }
+
+            a {
+                color: $white;
+                @include font-smoothing;
+                font-size: pxToRem(11.2);
+                line-height: pxToRem(11.2);
+                font-weight: 600;
+                font-family: 'Lato', sans-serif;
+                text-decoration: none;
+                border-right: 1px solid $white;
+                padding-right: pxToRem(10);
+                margin-right: pxToRem(10);
+                
+                &:focus,
+                &:hover {
+                    text-decoration: underline;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    &__copyright,
+    &__signoff {
+
+        text-align: center;
+
+        p,
+        p a,
+        a {
+            color: $white;
+            font-weight: 600;
+            @include font-smoothing;
+            font-family: 'Lato', sans-serif;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            font-size: pxToRem(11.2);
+            line-height: pxToRem(13);
+        }
+    }
+
+    &__copyright {
+        margin: pxToRem(20) 0 pxToRem(10) 0;
+    }
+    
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+
+}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    .site-footer {
+
+        padding: pxToRem(45) pxToRem(25) pxToRem(45) pxToRem(25);
+
+        &__signoff {
+            display: none;
+            margin: pxToRem(15) 0 0 0;
+        }
+
+
+        &__copyright {
+            margin-bottom: 0;
+        }
+        
+        ul {
+            li {
+                margin: 0 pxToRem(35) pxToRem(12) 0;
+
+                &.mobile-hidden {
+                    display: block;
+                }
+
+                a {
+                    border-right: none;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+
+    }
+}

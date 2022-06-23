@@ -1,0 +1,87 @@
+/*----------------------
+ * Weather Info Widget
+ *----------------------
+ */
+
+/*
+ * Mobile layout
+ */
+
+.qg-weather-info-widget {
+
+    display: none;
+
+    &.qg-weather-info-widget--has-result {
+        align-items: center;
+        display: flex;
+    }
+    
+    .qg-util-bar__widgets & {
+        font-size: pxToRem(14);
+        color: #fff;
+        padding-top: pxToRem(5);
+        padding-bottom: pxToRem(5);
+        border-right: pxToRem(1) solid #fff;
+        padding-right: pxToRem(10);
+        margin-right: pxToRem(10);
+    }
+
+}
+
+.qg-weather-info-widget__temperature {
+
+    .qg-util-bar__widgets & {
+        margin-right: pxToRem(3);
+    }
+
+}
+
+.qg-weather-info-widget__image {
+    
+    .qg-util-bar__widgets & {
+        font-size: pxToRem(17);
+        margin-left: pxToRem(5);
+        min-width: pxToRem(25);
+    }
+
+}
+
+@media screen and (max-width: $desktop - 1px) {
+    .qg-weather-info-widget {
+
+        .mobile-nav-active & {
+            display: none;
+        }
+
+    }
+}
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    
+    .qg-weather-info-widget {
+
+        .qg-util-bar__widgets & {
+            font-size: pxToRem(18);
+        }
+    
+    }
+
+}
+
+@media screen and (min-width: $desktop) and (max-width: 1399px) {
+
+    .qg-weather-info-widget {
+       
+        /* Hide widget if search form widget is active/hovered */
+        .qg-util-bar__widgets.search-form-widget--focused &,
+        .qg-util-bar__widgets.search-form-widget--hover & {
+            display: none;
+        }
+
+    }
+
+}

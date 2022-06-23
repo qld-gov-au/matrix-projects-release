@@ -1,0 +1,310 @@
+/*
+ * Mobile layout
+ */
+
+ .navbar-collapse.collapse,
+ .navbar-collapse.collapsing,
+ .navbar-collapse {
+
+    width: auto;
+    margin: 0 pxToRem(-15);
+    padding: 0;
+    border: none;
+
+    .masthead & {
+        padding: 0;
+    }
+
+
+    .section.site-search.simple-input {
+        padding: 0;
+        display: none;
+        margin: 0;
+    }
+
+    nav,
+    nav.navigation {
+        padding: 0;
+        width: 100%;
+        background: $dark-grey;
+        float: left;
+        margin: 0;
+
+        ul,
+        ul.nav,
+        ul.nav.nav-pills {
+            @include sq-list-reset;
+            list-style-type: none !important;
+            padding: 0;
+            float: left;
+            width: 100%;
+
+            li {
+                @include sq-list-reset;
+                list-style-type: none !important;
+                text-align: left;
+                width: 100%;
+                display: block;
+                line-height: pxToRem(18);
+                float: left;
+                display: flex;
+                justify-content: center;
+
+                &:nth-child(2n) {
+                    
+                    background-color: $medium-grey;
+
+                    a {                    
+                        &:focus,
+                        &:active,
+                        &:hover {
+                            color: $light-blue;
+                            background-color: #fff;
+                            @include sq-border-radius(0);
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                &.active,
+                &.current {
+                    a {
+                        text-decoration: underline;
+                        @include sq-border-radius(0);
+                        @include sq-box-shadow(none);
+                    }
+                }
+
+                a {
+                    @include font-smoothing;
+                    color: $white;
+                    text-decoration: none;
+                    padding: pxToRem(15) pxToRem(25);
+                    font-weight: 600;
+                    width: 100%;
+                    float: left;
+                    display: block;
+                    margin: 0;
+                    background-color: transparent;
+                    max-width: pxToRem(730);
+
+                    &:hover,
+                    &:active,
+                    &:focus {
+                        color: $light-blue;
+                        background-color: #fff;
+                        @include sq-border-radius(0);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+    
+    .navbar-collapse.collapse {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: pxToRem(5);
+        bottom: 0;
+
+        nav.navigation {
+            padding: 0;
+            background: transparent;
+            width: auto;
+
+            ul.listbox {
+                position: absolute;
+                top: pxToRem(46);
+                width: 100%;
+                @include sq-border-radius(5px);
+                border: none;
+                left: 0;
+
+                li {
+                    a {
+                        width: 100%;
+                        display: block;
+                        padding: pxToRem(7);
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background: none;
+                            color: $black;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+            ul,
+            ul.nav,
+            ul.nav.nav-pills {
+                @include sq-list-reset;
+                width: auto;
+                float: left;
+
+                li {
+                    width: auto;
+                    @include sq-list-reset;
+                    padding: pxToRem(9) pxToRem(5);
+                    
+
+                    &:nth-child(2n) {
+                        
+                        background-color: transparent;
+
+                        a {
+                            &:hover,
+                            &:focus,
+                            &:active {
+                                background-color: $white;
+                                @include sq-border-radius(3px);
+                                color: $light-blue;
+                            }
+                        }
+                    }
+
+                    &.active,
+                    &.current {
+                        a {
+                            background-color: $white;
+                            color: $light-blue;
+                            @include sq-border-radius(3px);
+                            text-decoration: none;
+
+                            &:focus,
+                            &:hover {
+                                color: $light-blue;
+                                @include sq-border-radius(3px);
+                                text-decoration: none;
+                            }
+                        }
+
+                    }
+
+                    a {
+                        padding: pxToRem(5) pxToRem(5);
+                        width: auto;
+                        font-size: pxToRem(16);
+                        line-height: pxToRem(16);
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $light-blue;
+                            @include sq-border-radius(3px);
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    
+    .navbar-collapse.collapse {
+        right: pxToRem(15);
+
+        nav.navigation {
+            padding-right: pxToRem(20);
+
+            ul,
+            ul.nav,
+            ul.nav.nav-pills {
+                li {
+                    padding: 0 pxToRem(1);
+
+                    a {
+                        padding: pxToRem(14) pxToRem(15);
+                    }
+                }
+            }
+        }
+
+        .section.site-search.simple-input {
+            display: block;
+            margin: 0;
+
+            input[type="text"]{
+                border: 0;
+                height: pxToRem(44);
+                font-size: pxToRem(16);
+                line-height: 22px;
+                width: pxToRem(220);
+                margin: 0;
+                padding: pxToRem(10) pxToRem(45) pxToRem(10) pxToRem(15);
+                background: $white;
+                @include sq-border-radius(5px);
+                color: $black;
+
+                &::-webkit-input-placeholder {
+                    color: $light-grey;
+                }
+            
+                &::-moz-placeholder {
+                    color: $light-grey;
+                }
+            
+                &:-ms-input-placeholder {
+                    color: $light-grey !important;
+                }
+            
+                &:-moz-placeholder {
+                    color: $light-grey;
+                }
+
+                &::-ms-clear {
+                    display: none;
+                }
+            }
+
+
+            button[type="submit"] {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                left: auto;
+                border: none;
+                height: pxToRem(44);
+                width: pxToRem(44);
+                background-color: $white;
+                padding: 0;
+                @include sq-border-radius(0 5px 5px 0);
+                margin: 0;
+                @include clear-default-appearance;
+
+                &:hover,
+                &:focus {
+                    outline: 0;
+
+                    .fa {
+                        color: $black;
+                    }
+                }
+
+                .fa {
+                    color: $light-grey;
+                }
+            }
+        }
+    }
+}

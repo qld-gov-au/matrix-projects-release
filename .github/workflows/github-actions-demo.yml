@@ -1,0 +1,38 @@
+#name: Push release folder
+#
+#on: push
+#
+#jobs:
+#  copy-file:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Extract branch name
+#        shell: bash
+#        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+#        id: extract_branch
+#
+#      - name: display branch name
+#        shell: bash
+#        run: echo "${{ steps.extract_branch.outputs.branch }}"
+#
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#
+#      - name: Build
+#        working-directory: ./global-search
+#        run: |
+#          ls
+#          npm install &&  npm run build
+#
+#      - name: Pushes test file
+#        uses: datalbry/copy_folder_to_another_repo_action@1.0.0
+#        env:
+#          API_TOKEN_GITHUB: ${{ secrets.GH_PAT }}
+#        with:
+#          source_folder: 'global-search/dist'
+#          destination_repo: ${{ secrets.TARGET_REPO }}
+#          destination_folder: 'global-search'
+#          user_email: ${{ github.event.release.author.login }}
+#          user_name: ${{ github.event.release.author.login }}
+#          destination_branch: master
+#          commit_msg: 'Publish'

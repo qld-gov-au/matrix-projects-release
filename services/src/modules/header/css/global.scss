@@ -1,0 +1,46 @@
+/*----------------------
+ * Header
+ *----------------------
+ */
+
+/*
+ * Up to before desktop layout
+ */
+
+@media screen and (max-width: $desktop - 1px) {
+
+    .qg-site-header {
+        background-image: linear-gradient(65deg, #17608a, #149086);
+        padding-top: pxToRem(30);
+        padding-bottom: pxToRem(10);
+
+        .mobile-nav-active & {
+            background-image: linear-gradient(30deg, #17608a, #149086);
+            height: 100%;
+            overflow: auto;
+            padding-bottom: pxToRem(30);
+            position: fixed;
+            top: 0;
+            width: 100%;
+
+            /* This absurdly high value is to make sure the feedback survey button is hidden */
+            z-index: 2999999999;
+            
+        }
+    
+    }
+
+}
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+
+    .qg-site-header {
+        display: flex;
+        flex-direction: column;
+    }
+
+}

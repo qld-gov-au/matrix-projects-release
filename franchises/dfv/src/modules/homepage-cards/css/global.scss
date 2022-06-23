@@ -1,0 +1,88 @@
+/*
+ * Mobile layout
+ */
+
+#qg-primary-content .dfv-cards--type-top-prompt {
+
+    &.row {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .card-container {
+        padding: 0 pxToRem(7) 0;
+        margin-bottom: pxToRem(15);
+        min-height: pxToRem(245);
+    }
+
+    a.card {
+        display: block;
+        color: inherit;
+        height: 100%;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: $dark-blue;
+            border-color: $dark-blue;
+            box-shadow: none;
+            color: #fff;
+
+            .card-title {
+                color: #fff;
+            }
+
+            .card-prompt {
+                &:before {
+                    background: #fff;
+                }
+
+                &:after {
+                    border-color: #fff;
+                }
+            }
+        }
+    }
+
+    .card-title {
+        margin-bottom: 0;
+        transition: all 0.3s ease;
+    }
+
+    .card-top {
+        margin-bottom: pxToRem(5);
+    }
+
+}
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop) {
+
+    #qg-primary-content .dfv-cards--type-top-prompt {
+        
+        .card-container {
+            margin-bottom: pxToRem(30);
+            padding: 0 pxToRem(15) 0;
+        }
+
+        .card-top {
+            display: flex;
+        }
+
+        .card-title {
+            flex-grow: 1;
+        }
+
+        .card-prompt {
+            @include css-arrow(16px, 13px, $deep-blue);
+            margin-left:pxToRem(5);
+            top: pxToRem(10);
+            flex-shrink: 0;
+        }
+
+    }
+
+}

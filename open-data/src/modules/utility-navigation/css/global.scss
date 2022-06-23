@@ -1,0 +1,60 @@
+/*
+ * Mobile layout
+ */
+
+ header.account-masthead {    
+    background: $dark-blue;
+    width: 100%;
+    padding: 0;
+    border: none;
+    margin: 0;
+
+    nav.account.not-authed ul.unstyled {
+        @include sq-list-reset;
+        margin: 0 pxToRem(-15);
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        align-items: center;
+
+        li {
+            @include sq-list-reset;
+            border: none;
+
+            a {
+                color: $white;
+                text-decoration: none;
+                line-height: pxToRem(16);
+                @include font-smoothing;
+                font-weight: 600;
+                height: pxToRem(44);
+                min-width: pxToRem(44);
+                display: flex;
+                align-items: center;
+                align-content: center;
+                padding: 0 pxToRem(15);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $white;
+                    background-color: $light-blue;
+                }
+            }
+        }
+    }
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){}

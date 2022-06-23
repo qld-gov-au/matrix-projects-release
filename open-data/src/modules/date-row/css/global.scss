@@ -1,0 +1,40 @@
+/*
+ * Mobile layout
+ */
+
+.date-row {
+
+    font-size: pxToRem(16);
+    line-height: pxToRem(18);
+    color: $medium-grey-2;
+    width: 100%;
+    margin: 0 0 pxToRem(20) 0;
+
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+    .date-row {
+
+        
+
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    .date-row {
+    
+
+        
+
+    }
+}

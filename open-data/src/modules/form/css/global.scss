@@ -1,0 +1,177 @@
+/*
+ * Mobile layout
+ */
+
+.form {
+
+    margin: pxToRem(30) 0 pxToRem(30) 0;
+
+    legend,
+    label {
+        font-weight: 700;
+        color: $black;
+        margin: 0 0 pxToRem(10) 0;
+        border: none;
+        font-size: pxToRem(16);
+        line-height: pxToRem(18);
+    }
+
+    fieldset {
+        margin: 0 0 pxToRem(20) 0;
+    }
+
+    &__field {
+
+        margin: 0 0 pxToRem(15) 0;
+
+        &-item {
+            margin: 0 0 pxToRem(10) 0;
+        }
+
+        &-wrapper {
+            margin: pxToRem(10) 0 0 0;
+        }
+
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+        @include clear-default-appearance;
+        padding: 0 pxToRem(10);
+        width: 100%;
+        display: block;
+        height: pxToRem(44);
+        font-size: pxToRem(16);
+        line-height: 1;
+        color: $black;
+        @include sq-border-radius(4px);
+        border: 1px solid $lightest-grey-2;
+
+        &::-ms-clear {
+            display: none;
+        }
+    }
+
+    textarea {
+        padding: pxToRem(10);
+        height: pxToRem(120);
+        width: 100%;
+        font-size: pxToRem(16);
+        line-height: pxToRem(18);
+        color: $black;
+        @include sq-border-radius(4px);
+        border: 1px solid $lightest-grey-2;
+        margin: 0;
+    }
+    
+    input[type="radio"] {
+		position: absolute;
+		opacity: 0;
+
+		&:focus {
+			& + label {
+				&:before {
+					outline: auto 5px -webkit-focus-ring-color;
+				}
+			}
+		}
+
+		&:checked {
+			& + label {
+				&:before {
+					border: 1px solid $light-blue;
+				}
+
+				&:after {
+					content: '';
+					width: pxToRem(7);
+					height: pxToRem(7);
+					border-radius: 100%;
+					position: absolute;
+					left: pxToRem(4);
+					top: pxToRem(13);
+                    background-color: $light-blue;
+				}
+			}
+		}
+
+		&:disabled {
+			& + label {
+				&:before {
+					opacity: 0.5;
+				}
+
+				&:after {
+					opacity: 0.5;
+				}
+			}
+		}
+
+		& + label {
+			position: relative;
+            padding: pxToRem(6) 0 pxToRem(6) pxToRem(24);
+            margin: 0;
+            display: inline-block;
+            font-size: pxToRem(16);
+            line-height: pxToRem(18);
+            font-weight: 400;
+            color: $black;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: pxToRem(9);
+				width: pxToRem(15);
+				height: pxToRem(15);
+				border-radius: 100%;
+				border: 1px solid $light-grey;
+            }
+            
+            &:after {
+                content: '';
+            }
+
+		}
+    }
+    
+
+    button[type="submit"],
+    input[type="submit"] {
+        @include clear-default-appearance;
+        color: $black;
+        background-color: $lime-green;
+        border-color: $lime-green;
+        font-size: pxToRem(16);
+        line-height: pxToRem(24);
+        @include sq-transition(background-color 0.15s ease);
+        @include sq-border-radius(4px);
+        padding: pxToRem(8) pxToRem(21);
+        letter-spacing: 0;
+        margin: pxToRem(30) 0 0 0;
+        font-weight: 700;
+
+        &:hover,
+        &:focus {
+            outline: 0;
+            background-color: $light-lime-green;
+            border-color: $light-lime-green;
+        }
+    }
+
+}
+
+
+@media screen and (min-width: $desktop){
+
+    .form {
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            max-width: pxToRem(450);
+        }
+    }
+
+}

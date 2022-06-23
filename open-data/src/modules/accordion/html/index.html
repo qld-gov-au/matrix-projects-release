@@ -1,0 +1,49 @@
+<!-- Accordions -->
+<section class="qg-accordion qg-dark-accordion" aria-label="Accordion Label">
+    <input type="radio" name="control" id="collapse" class="controls collapse" value="collapse" role="radio">
+    <label for="collapse" class="controls">Collapse all</label>
+    <span class="controls">|</span>
+    <input type="radio" name="control" id="expand" class="controls expand" value="expand" role="radio">
+    <label for="expand" class="controls">Expand all</label>
+
+    <article>
+        <input id="without-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-1" aria-expanded="false" role="checkbox">
+        <h3 class="acc-heading"><label for="without-icon">Without icon <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
+        <div class="collapsing-section" aria-hidden="true" id="id-panel-content-1">
+            <p> Content related to header. </p>
+            <ul>
+                <li>If dot points are available</li>
+                <li>Can go here</li>
+            </ul>
+            <p>Or provide any semantic html structure</p>
+        </div>
+    </article>
+    <article>
+        <input id="with-icon" type="checkbox" name="tabs" aria-controls="id-panel-content-2" aria-expanded="false" role="checkbox">
+        <h3 class="acc-heading"><img src="https://placeimg.com/20/20/nature" alt=""><label for="with-icon">With icon <span class="subtitle">Subtitle can go here (optional)</span><span class="arrow"> <i></i></span></label></h3>
+        <div class="collapsing-section" aria-hidden="true" id="id-panel-content-2">
+            <p> Content related to header. </p>
+            <ul>
+                <li>If dot points are available</li>
+                <li>Can go here</li>
+            </ul>
+            <p>Or provide any semantic html structure</p>
+        </div>
+    </article>
+</section>
+
+<section class="qg-accordion qg-light-accordion" aria-label="Accordion group">
+    <article>
+        <input id="control-id-panel-1-103071" type="checkbox" name="tabs" aria-controls="id-panel-1-103071" aria-expanded="false" role="checkbox"> 
+        <h3 class="acc-heading">
+                        <label for="control-id-panel-1-103071">
+                This is a 5 level accordion
+                <span class="subtitle">Subtitle 1</span>
+                <span class="arrow"> <i></i></span>
+            </label>
+        </h3>
+        <div class="collapsing-section" aria-hidden="true" id="id-panel-1-103071">
+            <p>Content in panel 1</p>
+        </div>
+    </article>
+</section>

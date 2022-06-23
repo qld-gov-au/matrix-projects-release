@@ -1,0 +1,194 @@
+/*
+ * Mobile layout
+ */
+
+.hero-banner {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &__inner {
+        padding-top: pxToRem(20);
+        padding-bottom: pxToRem(20);
+    }
+
+    &__text-wrap {
+        width: 100%;
+        max-width: pxToRem(250);
+        padding: pxToRem(20);
+        margin: 0;
+        position: relative;
+
+        h1 {
+            position: relative;
+            z-index: 50;
+            color: $white;
+            font-weight: 700;
+            font-size: pxToRem(18);
+            line-height: pxToRem(24);
+            @include font-smoothing;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: $black;
+            opacity: 0.6;
+        }
+
+    }
+
+    &__search {
+         margin: pxToRem(20) 0 0 0;
+         background: $white;
+         @include sq-border-radius(5px);
+         overflow: hidden;
+         padding: pxToRem(15) pxToRem(15);
+         width: 100%;
+
+         form {
+             padding-top: pxToRem(10);
+             position: relative;
+         }
+
+         input[type="text"] {
+             @include clear-default-appearance;
+             color: $light-grey;
+             width: 100%;
+             height: pxToRem(44);
+             margin: 0;
+             font-size: pxToRem(16);
+             line-height: pxToRem(18);
+             border: 1px solid $light-grey;
+             @include sq-border-radius(3px);
+             padding: pxToRem(10) pxToRem(45) pxToRem(10) pxToRem(15);
+
+             &::-webkit-input-placeholder {
+                color: $light-grey;
+            }
+        
+            &::-moz-placeholder {
+                color: $light-grey;
+            }
+        
+            &:-ms-input-placeholder {
+                color: $light-grey !important;
+            }
+        
+            &:-moz-placeholder {
+                color: $light-grey;
+            }
+         }
+
+         button[type="submit"] {
+            @include clear-default-appearance;
+            width: pxToRem(44);
+            height: pxToRem(44);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            &:hover,
+            &:focus {
+                &:before {
+                    color: $black;
+                }
+            }
+
+            &:before {
+                content: "\F002";
+                color: $light-grey;
+                @include font-awesome;
+                vertical-align: middle;
+            }
+         }
+
+    }
+
+    &__search-title {
+        font-weight: 700;
+        font-size: pxToRem(16);
+        line-height: pxToRem(18);
+        color: $light-blue;
+        margin: 0;
+        padding: 0;
+
+        bold {
+            color: $dark-blue;
+        }
+    }
+
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+    .hero-banner {
+        &__inner {
+            padding-top: pxToRem(60);
+            padding-bottom: pxToRem(60);
+        }
+
+        &__text-wrap {
+            max-width: pxToRem(350);
+        }
+
+        &__search {
+            margin: pxToRem(40) auto 0 auto;
+            max-width: pxToRem(860);
+            padding: pxToRem(15) pxToRem(15);
+        }
+
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+
+
+@media screen and (min-width: $desktop){
+    .hero-banner {
+
+        &__text-wrap {
+            max-width: pxToRem(495);
+    
+            h1 {
+                font-size: pxToRem(28);
+                line-height: pxToRem(32);
+            }
+        }
+
+        &__search {
+            padding: pxToRem(20) pxToRem(20);
+            margin: pxToRem(50) auto 0 auto;
+
+            form {
+                max-width: pxToRem(783);
+                margin: 0 auto;
+                padding-top: pxToRem(20);
+            }
+        }
+
+        &__search-title {
+            font-size: pxToRem(26);
+            line-height: pxToRem(28);
+            max-width: pxToRem(783);
+            margin: 0 auto;
+        }
+
+    }
+}

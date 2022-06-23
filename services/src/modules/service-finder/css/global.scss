@@ -1,0 +1,450 @@
+/*----------------------
+ * Service Finder
+ *----------------------
+ */
+
+/*
+ * Mobile layout
+ */
+
+.services-service-finder {
+    border-bottom: pxToRem(1) solid #d6dbdf;
+    margin-top: pxToRem(15);
+    margin-bottom: pxToRem(20);
+    padding-bottom: pxToRem(20);
+
+    .services-banner & {
+        border: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+.services-service-finder__heading {
+    color: #063652;
+    display: inline-block;
+    font-size: pxToRem(22);
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: pxToRem(10);
+}
+
+.services-service-finder__form {
+
+    display: flex;
+
+    .tt-menu {
+        border: pxToRem(2) solid #063652;
+        border-top: 0;
+        border-radius: 0 0 pxToRem(8) pxToRem(8);
+        background-color: #fff;
+        left: 0 !important;
+        right: pxToRem(-60);
+
+         /* This absurdly high value is to make sure the feedback survey button is hidden */
+         z-index: 2000000100 !important;
+
+        &.tt-scrollable {
+            max-height: pxToRem(500);
+            overflow-y: auto;
+        }
+    }
+
+    .tt-category {
+        @extend %screen-hide;
+    }
+
+    .tt-dataset-organic {
+        .tt-suggestion {
+            cursor: pointer;
+            font-size: pxToRem(18);
+            letter-spacing: pxToRem(0.7);
+            padding: pxToRem(15) pxToRem(20);
+            &:hover {
+                background-color: #063652;
+                color: #fff;
+            }
+            & + .tt-suggestion {
+                border-top: pxToRem(2) solid #e1e1e1;
+            }
+            & + .tt-dataset-featured {
+                border-top: pxToRem(1) solid #063652;
+                & + .tt-suggestion {
+                    border-top: pxToRem(1) solid #063652;
+                }
+            }
+        }
+    }
+}
+
+.services-service-finder__featured-heading {
+    font-size: pxToRem(14);
+    font-weight: 700;
+    letter-spacing: pxToRem(0.5);
+    margin-bottom: pxToRem(10);
+    margin-top: 0;
+}
+
+.services-service-finder__featured-icon {
+    color: #063652;
+    font-size: pxToRem(14);
+    margin-bottom: pxToRem(10);
+    & + & {
+        margin-left: pxToRem(10);
+    }
+}
+
+.services-service-finder__featured-description {
+    font-size: pxToRem(12);
+    letter-spacing: pxToRem(0.4);
+    margin-bottom: pxToRem(0);
+}
+
+.services-service-finder__field-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.services-service-finder__field {
+    background-color: #ffffff;
+    border: pxToRem(2) solid #063652;
+    border-radius: pxToRem(8) 0 0 pxToRem(8);
+    color: #000;
+    font-size: pxToRem(18);
+    line-height: 1;
+    overflow: hidden;
+    padding: pxToRem(19) pxToRem(25) pxToRem(17) pxToRem(17);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #607a89;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: #607a89;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+        color: #607a89;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: #607a89;
+    }
+    &::placeholder {
+        color: #607a89;
+    }
+
+    .services-service-finder--results-shown &,
+    .services-service-finder--focused.services-service-finder--no-input &,
+    .services-service-finder--no-results-menu-link-focused & {
+        border-bottom-left-radius: 0;
+    }
+    &.tt-hint {
+        background-color: #fff !important;
+        color: #ccc !important;
+    }
+}
+
+.services-service-finder__no-results-menu {
+    @extend %screen-hide;
+    background-color: #fff;
+    border: pxToRem(2) solid #063652;
+    border-top: 0;
+    border-radius: 0 0 pxToRem(8) pxToRem(8);
+    box-shadow: 0 pxToRem(1) pxToRem(3) 0 rgba(0, 0, 0, 0.25);
+    left: 0;
+    right: pxToRem(-60);
+    top: 100%;
+
+     /* This absurdly high value is to make sure the feedback survey button is hidden */
+    z-index: 2000000100;
+
+    .services-service-finder--focused.services-service-finder--no-input &,
+    .services-service-finder--no-results-menu-link-focused & {
+        clip: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        width: auto;
+    }
+    &:focus{
+        outline:inherit;
+    }
+}
+
+.services-service-finder__no-results-menu-block {
+    flex: 1;
+    padding: pxToRem(20) pxToRem(15) pxToRem(35);
+}
+
+.services-service-finder__no-results-menu-heading {
+    font-size: pxToRem(18);
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: pxToRem(25);
+}
+
+.services-service-finder__no-results-menu-list {
+    margin-bottom: 0;
+    padding-left: pxToRem(30);
+}
+
+.services-service-finder__no-results-menu-list-item {
+    font-size: pxToRem(15);
+    & + & {
+        margin-top: pxToRem(20);
+    }
+}
+
+.services-service-finder__no-results-menu-list-item-link {
+    color: #000;
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+        color: #000;
+        text-decoration: none;
+    }
+}
+.services-service-finder__btn {
+    background-color: #063652;
+    border-width: 0;
+    border-radius: 0 pxToRem(8) pxToRem(8) 0;
+    color: #fff;
+    flex-shrink: 0;
+    font-size: pxToRem(22);
+    padding: 0;
+    width: pxToRem(60);
+}
+
+@media screen and (max-width: $desktop - 1px){
+    .services-service-finder__form {
+        .tt-dataset-organic {
+            & + .tt-dataset-featured {
+                display: none;
+            }
+        }
+    }
+
+    .services-service-finder__featured-btn {
+        display: none;
+    }
+
+    .services-service-finder__featured-icon {
+
+        .tt-suggestion:hover & {
+            color: #fff;
+        }
+    }
+    .services-service-finder__no-results-menu-block {
+        & + & {
+            border-top: pxToRem(1) solid #000;
+        }
+    }
+
+    .services-service-finder__btn {
+        .services-service-finder--focused &,
+        .services-service-finder--no-results-menu-link-focused & {
+            border-bottom-right-radius: 0;
+        }
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+
+    .services-service-finder {
+        margin-top: pxToRem(60);
+        margin-bottom: pxToRem(50);
+        padding-bottom: pxToRem(50);
+        .services-banner & {
+            margin-top: 0;
+        }
+    }
+
+    .services-service-finder__heading {
+        color: #17628a;
+        font-size: pxToRem(48);
+        font-weight: 600;
+        margin-bottom: pxToRem(50);
+        .services-banner & {
+            background-color: rgba(0, 0, 0, 0.55);
+            border-radius: 0 pxToRem(14) pxToRem(14) 0;
+            color: #fff;
+            margin-bottom: pxToRem(40);
+            padding: pxToRem(40) pxToRem(70) pxToRem(30) 0;
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 300%;
+                top: 0;
+                right: 100%;
+                background-color: rgba(0, 0, 0, 0.55);
+            }
+        }
+    }
+
+    .services-service-finder__form {
+        .tt-menu {
+            box-shadow: 0 pxToRem(20) pxToRem(20) 0 rgba(0, 0, 0, 0.25);
+            right: 0;
+            .services-service-finder--results-shown & {
+                display: flex !important;
+            }
+            .services-banner & {
+                border: 0;
+                border-top: pxToRem(1) solid #063652;
+            }
+        }
+        .tt-dataset-organic {
+            flex-grow: 1;
+            .services-service-finder--has-featured-result & {
+                border-right: pxToRem(1) solid #063652;
+            }
+            .tt-suggestion {
+                font-size: pxToRem(26);
+                letter-spacing: pxToRem(1);
+                padding: pxToRem(20) pxToRem(25);
+                & + .tt-dataset-featured {
+                    & + .tt-suggestion {
+                        border-top: pxToRem(2) solid #e1e1e1;
+                    }
+                }
+            }
+            .tt-dataset-featured {
+                display: none;
+            }
+            & + .tt-dataset-featured {
+                display: block;
+            }
+        }
+        .tt-dataset-featured {
+            .tt-suggestion {
+                padding: pxToRem(40) pxToRem(65);
+                width: pxToRem(390);
+            }
+        }
+    }
+
+    .services-service-finder__featured-heading {
+        font-size: pxToRem(28);
+        font-weight: 500;
+        margin-bottom: pxToRem(30);
+    }
+    .services-service-finder__featured-icon {
+        font-size: pxToRem(41);
+        margin-bottom: pxToRem(20);
+    }
+    .services-service-finder__featured-description {
+        font-size: pxToRem(20);
+        margin-bottom: pxToRem(30);
+    }
+    .services-service-finder__featured-btn {
+        background-color: #063652;
+        border: 0;
+        border-radius: pxToRem(4);
+        color: #fff;
+        font-size: pxToRem(26);
+        font-weight: 600;
+        padding: pxToRem(20);
+        width: 100%;
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+    .services-service-finder__featured-icon {
+        & + & {
+            margin-left: pxToRem(20);
+        }
+    }
+
+    .services-service-finder__field {
+        border-radius: pxToRem(14) 0 0 pxToRem(14);
+        font-size: pxToRem(32);
+        padding: pxToRem(35);
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #063652;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+            color: #063652;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+            color: #063652;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+            color: #063652;
+        }
+        .services-banner & {
+            background-color: rgba(255,255,255,0.8);
+            border-width: 0;
+            &.tt-hint {
+                background-color: rgba(255,255,255,0.8) !important;
+            }
+            &:focus {
+                background-color: #ffffff !important;
+            }
+        }
+    }
+
+    .services-service-finder__no-results-menu {
+        background-color: #f5f5f5;
+        box-shadow: 0 pxToRem(20) pxToRem(20) 0 rgba(0, 0, 0, 0.25);
+        right: 0;
+        .services-banner & {
+            border: 0;
+            border-top: pxToRem(1) solid #063652;
+        }
+        .services-service-finder--focused &,
+        .services-service-finder--no-results-menu-link-focused & {
+            display: flex;
+        }
+        .services-service-finder--has-input & {
+            display: none;
+        }
+
+    }
+
+    .services-service-finder__no-results-menu-block {
+        padding: pxToRem(50) pxToRem(80);
+        & + & {
+            border-left: pxToRem(1) solid #063652;
+        }
+    }
+
+    .services-service-finder__no-results-menu-heading {
+        color: #063652;
+        font-size: pxToRem(26);
+        margin-bottom: pxToRem(50);
+    }
+
+    .services-service-finder__no-results-menu-list {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .services-service-finder__no-results-menu-list-item {
+        font-size: pxToRem(26);
+        & + & {
+            margin-top: pxToRem(50);
+        }
+    }
+
+    .services-service-finder__no-results-menu-list-item-link {
+        color: #063652;
+        &:hover,
+        &:focus {
+            color: #063652;
+        }
+    }
+
+    .services-service-finder__btn {
+        border-radius: 0 pxToRem(14) pxToRem(14) 0;
+        font-size: pxToRem(44);
+        width: pxToRem(110);
+    }
+}

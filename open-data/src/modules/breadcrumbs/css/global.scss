@@ -1,0 +1,122 @@
+/*
+ * Mobile layout
+ */
+
+.toolbar {
+    width: 100%;
+    padding: pxToRem(15) 0 0 0;
+    margin: 0;
+
+    ol,
+    ol.breadcrumb {        
+        padding: 0;
+        margin: 0;
+        display: block;
+
+        li {
+            padding: 0;
+            margin: 0;
+            color: $dark-blue;
+            font-size: pxToRem(16);
+            line-height: pxToRem(19);
+            font-weight: 600;
+            width: auto;
+            position: relative;
+            display: inline-block;
+
+            &.home {
+                display: inline-block;
+                width: auto;
+
+                &:before {
+                    display: none;
+                }
+
+                .fa {
+                    font-size: pxToRem(21);
+                    line-height: pxToRem(22);
+                    color: $dark-blue;
+                }
+            }
+
+            &:before {
+                color: $dark-blue;
+                content: "/";
+                font-size: pxToRem(21);
+                font-weight: 600;
+                line-height: 20px;
+                vertical-align: bottom;
+                margin: 0 pxToRem(8) 0 pxToRem(8);
+            }
+
+            &:after {
+                display: none;
+            }
+
+            a {
+                color: $dark-blue;
+                font-size: pxToRem(16);
+                line-height: pxToRem(19);
+                font-weight: 600;
+                text-decoration: none;
+
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    
+
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+    .toolbar {
+
+        
+
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    .toolbar {
+
+        padding: pxToRem(15) 0;
+
+        ol,
+        ol.breadcrumb {
+
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-content: center;
+            align-items: center;
+
+            li {
+
+                &:first-child {
+
+
+                    &:before {
+                        font-size: pxToRem(21);
+                        line-height: pxToRem(23);
+                    }
+                }
+
+            }
+        }
+        
+        
+    }
+}

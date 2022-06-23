@@ -1,0 +1,51 @@
+/*
+ * Mobile layout
+ */
+
+.sub-nav {
+
+    padding: pxToRem(30) 0;
+
+    ul {
+        @include sq-list-reset;
+
+        li {
+            @include sq-list-reset;
+            width: 100%;
+
+            &.active,
+            &.current {
+                a {
+                    background-color: $light-grey-blue;
+                    font-weight: 700;
+                }
+            }
+
+            a {
+                display: block;
+                font-size: pxToRem(16);
+                line-height: pxToRem(18);
+                font-weight: 500;
+                color: $black;
+                text-decoration: none;
+                padding: pxToRem(15) pxToRem(15);
+                @include sq-transition(background-color 0.4s ease);
+                width: 100%;
+
+                &:hover,
+                &:focus {
+                    background-color: $light-grey-blue;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: $tablet - 1px) {
+
+    .sub-nav {        
+        display: none;
+    }
+    
+}

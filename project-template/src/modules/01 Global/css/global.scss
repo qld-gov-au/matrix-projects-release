@@ -1,0 +1,38 @@
+/*
+ * QLD Government Imports
+*/
+
+@import "~web-template-release/template-local/assets/v3.1/latest/css/qg-main.css";
+
+
+/*
+ * Mobile layout
+ */
+
+body {
+    z-index: 1;
+}
+
+
+/*
+ * Tablet layout
+ */
+
+@media screen and (min-width: $tablet){
+    body {
+        z-index: 2;
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+
+@media screen and (min-width: $desktop){
+    body {
+        z-index: 3;
+    }
+}
+
+
